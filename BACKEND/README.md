@@ -77,7 +77,7 @@
 
     * Deploy a VPC, a security group, a subnet, and an EC2 instance.
 
-### Folder Structure
+### Part 2: Folder Structure
 
 #### 1\. VPC Module (`vpc` folder)
 
@@ -203,107 +203,3 @@ git push -u origin dev
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804073528/95b6d812-c601-4316-a09e-431f1c5c0fec.png)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804103990/7d5265bc-5379-488a-9d31-c16da7d6c9c5.png)
-
-### Part 2: CI/CD Pipeline
-
-1. **Create a GitLab CI/CD pipeline:**
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804136384/ceddab5e-1cf6-49dd-a14b-50e97eb48431.png)
-
-* Write a `.gitlab-ci.yml` file to automate Terraform commands.
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804235396/11da153f-3a2b-400a-9e2c-c456df72ac52.png)
-
-* Store access keys and secret access keys in GitLab CI/CD variables.
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804274419/97b786ed-3daa-4956-ac9c-2da8005ca282.png)
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804310585/22ff98bf-8e30-48e8-a9a6-134ad9536a59.png)
-
-```yaml
-# .gitlab-ci.yml
-image: hashicorp/terraform:latest
-
-variables:
-  TF_LOG: DEBUG
-  TF_IN_AUTOMATION: true
-
-cache:
-  paths:
-    - .terraform/
-
-stages:
-  - validate
-  - plan
-  - apply
-  - destroy
-
-validate:
-  script:
-    - terraform init
-    - terraform validate
-
-plan:
-  script:
-    - terraform plan -out=planfile
-  artifacts:
-    paths:
-      - planfile
-
-apply:
-  script:
-    - terraform apply "planfile"
-  when: manual
-
-destroy:
-  script:
-    - terraform destroy -auto-approve
-  when: manual
-```
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804363363/58b1f220-6a17-4f39-834a-82fe81011a7c.png)
-
-2. **Logs and Execution:**
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804397005/9c0963df-9771-4ca5-8b8e-e68193bc0ea0.png)
-
-* Validate stage: `terraform init` and `terraform validate`
-
-* Plan stage: `terraform plan`
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804432688/07d02845-482b-45ba-b2d7-928b8075da09.png)
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804470952/49e940ae-8a91-48a4-80f6-3d1edf3af634.png)
-
-* Apply stage: `terraform apply`
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804494527/39e0bc72-2e32-40e2-b149-bfc5aeaaaf5f.png)
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804511156/2b1f5bb5-92be-4a40-9e1f-b7b6f7407777.png)
-
-3. Destroy stage: `terraform destroy`
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804633310/66ae858e-0b6f-4974-8406-146674f3d8ee.png)
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804657672/534dddc3-d783-44a6-853b-40fa38d19f71.png)
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804693970/48c06297-afee-4dbb-800e-54c4ea725831.png)
-
-### 🌟 Final Notes
-
-* The pipeline performs the following steps:
-
-  * Initializes Terraform with the specified backend configuration.
-
-  * Applies the Terraform plan to create infrastructure resources (VPC, Subnet, Security Group, and EC2 instance).
-
-  * Saves `.terraform` directory to cache for future use.
-
-  * Cleans up the environment after the job is completed.
-
-
-If you found this helpful, consider **starring** ⭐ the repository and sharing it with your network! 🚀  
-
-### 📢 Stay Connected  
-
-![Follow Me](https://imgur.com/2j7GSPs.png)
