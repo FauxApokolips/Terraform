@@ -22,15 +22,11 @@
 
     * Check out the official website to install Terraform [here](https://developer.hashicorp.com/terraform/install).
 
-        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720803204575/77686b19-dd44-4b8b-80c7-3803085e2af5.png)
-
 4. **AWS CLI Installed**
 
     * Navigate to the IAM dashboard on AWS, then select "Users."
 
     * Enter the username and proceed to the next step.
-
-        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720803238522/dff3c840-78ad-4c2a-ad76-d68f59c15363.png)
 
     * Assign permissions by attaching policies directly, opting for "Administrator access," and then create the user.
 
