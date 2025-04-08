@@ -194,8 +194,3 @@ git push -u origin dev
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804004557/557a5711-82eb-4288-9f03-524830a54378.png)
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804043190/55c3c40a-6596-414a-b086-3ad0b5402c02.png)
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804073528/95b6d812-c601-4316-a09e-431f1c5c0fec.png)
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720804103990/7d5265bc-5379-488a-9d31-c16da7d6c9c5.png)
