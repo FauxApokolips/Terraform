@@ -1,13 +1,5 @@
 # 🚀 DevOps Project to Automate Infrastructure on AWS Using Terraform and GitLab CICD
 
-Before starting, ensure you have a basic understanding of:
-
-* Basic Terraform Knowledge
-
-* Understanding of CI/CD
-
-* GitLab CI Knowledge
-
 ## 📝 Prerequisites
 
 1. **AWS Account Creation**
@@ -70,16 +62,6 @@ Before starting, ensure you have a basic understanding of:
     * Download it from [here](https://code.visualstudio.com/download).
 
 ## 📂 Project Structure
-
-The project is divided into two parts:
-
-1. **Manual Setup:** Write Terraform code, run Terraform commands, and create infrastructure manually.
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720803453942/aa0166a2-11e0-4ca5-9fb1-a686568b65a5.png)
-
-2. **Automation:** Create a CI/CD pipeline script on GitLab to automate Terraform resource creation.
-
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1720803481042/de7eb43b-7b20-438c-abe2-dbbcfdce035d.png)
 
 ### Part 1: Manual Setup
 
@@ -319,20 +301,6 @@ destroy:
 
   * Cleans up the environment after the job is completed.
 
-## 🛠️ Author & Community  
-
-This project is crafted by **[Harshhaa](https://github.com/NotHarshhaa)** 💡.  
-I’d love to hear your feedback! Feel free to share your thoughts.  
-
-📧 **Connect with me:**
-
-- **GitHub**: [@NotHarshhaa](https://github.com/NotHarshhaa)
-- **Blog**: [ProDevOpsGuy](https://blog.prodevopsguy.xyz)  
-- **Telegram Community**: [Join Here](https://t.me/prodevopsguy)  
-
----
-
-## ⭐ Support the Project  
 
 If you found this helpful, consider **starring** ⭐ the repository and sharing it with your network! 🚀  
 
